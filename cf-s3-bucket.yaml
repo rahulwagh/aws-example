@@ -26,26 +26,26 @@ Resources:
       #        SSEAlgorithm: AES256
 
       ## Setup encryption - KMS Key
-      BucketEncryption:
-        ServerSideEncryptionConfiguration:
-          - ServerSideEncryptionByDefault:
-              SSEAlgorithm: aws:kms
-              KMSMasterKeyID: !Ref KmsKeyArn
+      # BucketEncryption:
+      #   ServerSideEncryptionConfiguration:
+      #     - ServerSideEncryptionByDefault:
+      #         SSEAlgorithm: aws:kms
+      #         KMSMasterKeyID: !Ref KmsKeyArn
 
-      ## Enable versioning
-      VersioningConfiguration:
-        Status: Enabled
+      # ## Enable versioning
+      # VersioningConfiguration:
+      #   Status: Enabled
 
-      ## Block public access
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: true
-        BlockPublicPolicy: true
-        IgnorePublicAcls: true
-        RestrictPublicBuckets: true
+      # ## Block public access
+      # PublicAccessBlockConfiguration:
+      #   BlockPublicAcls: true
+      #   BlockPublicPolicy: true
+      #   IgnorePublicAcls: true
+      #   RestrictPublicBuckets: true
 
-      ## Setup Log bucket
-      LoggingConfiguration:
-        DestinationBucketName: !Ref AccessLogBucket
+      # ## Setup Log bucket
+      # LoggingConfiguration:
+      #   DestinationBucketName: !Ref AccessLogBucket
 
 Outputs:
   MainBucketName:
